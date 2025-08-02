@@ -69,13 +69,13 @@ def train_xgboost_with_validation(X, y):
     
     # Reduced complexity to prevent overfitting
     model = XGBClassifier(
-        n_estimators=50,        # Reduced from 150
-        max_depth=3,            # Reduced from 5
-        learning_rate=0.05,     # Reduced from 0.1
-        subsample=0.8,          # Added subsampling
-        colsample_bytree=0.8,   # Added feature subsampling
-        reg_alpha=1,            # Added L1 regularization
-        reg_lambda=1,           # Added L2 regularization
+        n_estimators=150,        
+        max_depth=3,            
+        learning_rate=0.005,     
+        subsample=0.8,          
+        colsample_bytree=0.8,   
+        reg_alpha=1,            ## Added L1 and L2 reg
+        reg_lambda=1,           
         use_label_encoder=False, 
         eval_metric='logloss', 
         random_state=42
